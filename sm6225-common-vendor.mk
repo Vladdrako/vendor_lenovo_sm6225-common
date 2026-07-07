@@ -95,8 +95,6 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/sm6225-common/proprietary/vendor/etc/init/vendor.sensors.sscrpcd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.sensors.sscrpcd.rc \
     vendor/lenovo/sm6225-common/proprietary/vendor/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     vendor/lenovo/sm6225-common/proprietary/vendor/etc/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf \
-    vendor/lenovo/sm6225-common/proprietary/vendor/etc/permissions/android.hardware.vulkan.version-1_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_3.xml \
-    vendor/lenovo/sm6225-common/proprietary/vendor/etc/permissions/android.software.opengles.deqp.level.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
     vendor/lenovo/sm6225-common/proprietary/vendor/etc/qdcm_calib_data_hx83102p_boe_2k_video_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_hx83102p_boe_2k_video_mode_dsi_panel.xml \
     vendor/lenovo/sm6225-common/proprietary/vendor/etc/qdcm_calib_data_nt36523w_tm_2k_video_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_nt36523w_tm_2k_video_mode_dsi_panel.xml \
     vendor/lenovo/sm6225-common/proprietary/vendor/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
@@ -246,11 +244,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/sm6225-common/proprietary/vendor/firmware/scuba_ipa_fws.b03:$(TARGET_COPY_OUT_VENDOR)/firmware/scuba_ipa_fws.b03 \
     vendor/lenovo/sm6225-common/proprietary/vendor/firmware/scuba_ipa_fws.b04:$(TARGET_COPY_OUT_VENDOR)/firmware/scuba_ipa_fws.b04 \
     vendor/lenovo/sm6225-common/proprietary/vendor/firmware/scuba_ipa_fws.elf:$(TARGET_COPY_OUT_VENDOR)/firmware/scuba_ipa_fws.elf \
-    vendor/lenovo/sm6225-common/proprietary/vendor/firmware/scuba_ipa_fws.mdt:$(TARGET_COPY_OUT_VENDOR)/firmware/scuba_ipa_fws.mdt \
-    vendor/lenovo/sm6225-common/proprietary/vendor/gpu/kbc/sequence_manifest.bin:$(TARGET_COPY_OUT_VENDOR)/gpu/kbc/sequence_manifest.bin \
-    vendor/lenovo/sm6225-common/proprietary/vendor/gpu/kbc/unified_kbcs_32.bin:$(TARGET_COPY_OUT_VENDOR)/gpu/kbc/unified_kbcs_32.bin \
-    vendor/lenovo/sm6225-common/proprietary/vendor/gpu/kbc/unified_kbcs_64.bin:$(TARGET_COPY_OUT_VENDOR)/gpu/kbc/unified_kbcs_64.bin \
-    vendor/lenovo/sm6225-common/proprietary/vendor/gpu/kbc/unified_ksqs.bin:$(TARGET_COPY_OUT_VENDOR)/gpu/kbc/unified_ksqs.bin
+    vendor/lenovo/sm6225-common/proprietary/vendor/firmware/scuba_ipa_fws.mdt:$(TARGET_COPY_OUT_VENDOR)/firmware/scuba_ipa_fws.mdt
 
 PRODUCT_PACKAGES += \
     eglSubDriverAndroid \
@@ -662,12 +656,7 @@ PRODUCT_PACKAGES += \
     xtra-daemon \
     xtwifi-client \
     xtwifi-inet-agent \
-    dpmd \
-    eglSubDriverAndroid \
-    libllvm-glnext \
-    libVkLayer_ADRENO_qprofiler \
-    libOpenCL_adreno \
-    libllvm-qgl
+    dpmd
 
 PRODUCT_PACKAGES += \
     libimscamera_jni_libimscamera_jni_symlink64 \
