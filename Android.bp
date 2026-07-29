@@ -3597,6 +3597,39 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+	name: "libqti_vndfwk_detect",
+	owner: "lenovo",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libqti_vndfwk_detect.so"],
+				shared_libs: [
+		"libc",
+		"libc++",
+		"libcutils",
+		"libdl",
+		"libm",
+	],
+		},
+		android_arm64: {
+			srcs: ["proprietary/vendor/lib64/libqti_vndfwk_detect.so"],
+				shared_libs: [
+		"libc",
+		"libc++",
+		"libcutils",
+		"libdl",
+		"libm",
+	],
+		},
+	},
+	compile_multilib: "both",
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "libSecureUILib",
 	owner: "lenovo",
 	strip: {
