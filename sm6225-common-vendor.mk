@@ -484,9 +484,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2-service \
     libVkLayer_ADRENO_qprofiler \
     libllvm-qgl \
-	libPipeline_plugin \
-	libVkLayer_khronos_validation \
-	gpu++
+    libPipeline_plugin \
+    libVkLayer_khronos_validation \
+    gpu++ \
+    libstagefright_foundation_a13
 
 PRODUCT_PACKAGES += \
     libEGL_adreno_libEGL_adreno_symlink32 \

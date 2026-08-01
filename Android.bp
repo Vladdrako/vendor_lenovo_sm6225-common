@@ -3311,6 +3311,32 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+	name: "libstagefright_foundation_a13",
+	owner: "lenovo",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libstagefright_foundation_a13.so"],
+				shared_libs: [
+		"libc",
+		"libc++",
+		"libcutils",
+		"libdl",
+		"liblog",
+		"libm",
+		"libutils",
+	],
+		},
+	},
+	compile_multilib: "32",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
 	name: "vendor.qti.hardware.sensorscalibrate@1.0-impl",
 	owner: "lenovo",
 	strip: {
@@ -3592,39 +3618,6 @@ cc_prebuilt_library_shared {
 		},
 	},
 	compile_multilib: "64",
-	prefer: true,
-	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "libqti_vndfwk_detect",
-	owner: "lenovo",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm: {
-			srcs: ["proprietary/vendor/lib/libqti_vndfwk_detect.so"],
-				shared_libs: [
-		"libc",
-		"libc++",
-		"libcutils",
-		"libdl",
-		"libm",
-	],
-		},
-		android_arm64: {
-			srcs: ["proprietary/vendor/lib64/libqti_vndfwk_detect.so"],
-				shared_libs: [
-		"libc",
-		"libc++",
-		"libcutils",
-		"libdl",
-		"libm",
-	],
-		},
-	},
-	compile_multilib: "both",
 	prefer: true,
 	soc_specific: true,
 }
