@@ -487,7 +487,9 @@ PRODUCT_PACKAGES += \
     libPipeline_plugin \
     libVkLayer_khronos_validation \
     gpu++ \
-    libstagefright_foundation_a13
+    libstagefright_foundation_a13 \
+    liblocdiagiface \
+    libspl
 
 PRODUCT_PACKAGES += \
     libEGL_adreno_libEGL_adreno_symlink32 \

@@ -3546,6 +3546,20 @@ cc_prebuilt_library_shared {
 		none: true,
 	},
 	target: {
+		android_arm: {
+			srcs: ["proprietary/vendor/lib/libQSEEComAPI.so"],
+				shared_libs: [
+		"libc",
+		"libc++",
+		"libcutils",
+		"libdl",
+		"libion",
+		"libdmabufheap",
+		"liblog",
+		"libm",
+		"libutils",
+	],
+		},
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libQSEEComAPI.so"],
 				shared_libs: [
@@ -3554,13 +3568,14 @@ cc_prebuilt_library_shared {
 		"libcutils",
 		"libdl",
 		"libion",
+		"libdmabufheap",
 		"liblog",
 		"libm",
 		"libutils",
 	],
 		},
 	},
-	compile_multilib: "64",
+	compile_multilib: "both",
 	prefer: true,
 	soc_specific: true,
 }
@@ -4213,6 +4228,64 @@ cc_prebuilt_library_shared {
 	compile_multilib: "64",
 	prefer: true,
 	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liblocdiagiface",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    shared_libs: [
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdiag",
+        "libdl",
+        "libgps.utils",
+        "liblog",
+        "libm",
+        "libutils",
+    ],
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/liblocdiagiface.so"],
+        },
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/liblocdiagiface.so"],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libspl",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    shared_libs: [
+        "libc",
+        "libc++",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libm",
+        "libQSEEComAPI",
+    ],
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libspl.so"],
+        },
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/libspl.so"],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
 }
 
 cc_prebuilt_library_shared {
