@@ -291,32 +291,25 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/egl/libPipeline_plugin.so"],
-				shared_libs: [
-		"android.system.keystore2-V5-ndk",
-		"android.hardware.boot@1.0",
-		"android.hardware.boot-V1-ndk",
-		"libbase",
-		"libbinder",
-		"libbinder_ndk",
-		"libcrypto",
-		"libcrypto_utils",
-		"libf2fs_sparseblock",
-		"libhardware",
-		"libhardware_legacy",
-		"libincfs",
-		"libhidlbase",
-		"libkeymint_support",
-		"libselinux",
-		"libsysutils",
-		"libutils",
-		"libc",
-		"libc++",
-		"libcutils",
-		"libdl",
-		"liblog",
-		"libm",
-		"libz",
-	],
+			shared_libs: [
+				"android.hardware.boot@1.0",
+				"android.hardware.boot-V1-ndk",
+				"libbase",
+				"libbinder",
+				"libbinder_ndk",
+				"libcrypto",
+				"libcrypto_utils",
+				"libcutils",
+				"libf2fs_sparseblock",
+				"libhardware",
+				"libhardware_legacy",
+				"libincfs",
+				"libhidlbase",
+				"liblog",
+				"libselinux",
+				"libsysutils",
+				"libutils",
+			],
 		},
 	},
 	compile_multilib: "64",
@@ -324,6 +317,159 @@ cc_prebuilt_library_shared {
 	relative_install_path: "egl",
 	prefer: true,
 	soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libadreno_compiler_cl",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libadreno_compiler_cl.so"],
+        },
+    },
+    compile_multilib: "64",
+    shared_libs: ["liblog"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.egl.qspmhal-V1-ndk",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/vendor.egl.qspmhal-V1-ndk.so"],
+        },
+    },
+    compile_multilib: "64",
+    shared_libs: ["libbinder_ndk", "android.hardware.common-V2-ndk"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.hexlp-V2-ndk",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/vendor.qti.hardware.hexlp-V2-ndk.so"],
+        },
+    },
+    compile_multilib: "64",
+    shared_libs: ["libbinder_ndk", "libnativewindow", "android.hardware.common-V2-ndk"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vkbadreno_utils",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/vkbadreno_utils.so"],
+        },
+    },
+    compile_multilib: "64",
+    shared_libs: ["vkbgsl", "liblog", "libnativewindow"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vkbgsl",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/vkbgsl.so"],
+        },
+    },
+    compile_multilib: "64",
+    shared_libs: ["libcutils", "liblog", "libz", "libsync", "libdmabufheap"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vkbllvm-glnext",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/vkbllvm-glnext.so"],
+        },
+    },
+    compile_multilib: "64",
+    shared_libs: ["vkbgsl", "liblog"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vkbllvm-qgl",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/vkbllvm-qgl.so"],
+        },
+    },
+    compile_multilib: "64",
+    shared_libs: ["vkbgsl", "liblog"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "mapper.qti",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/hw/mapper.qti.so"],
+        },
+    },
+    compile_multilib: "64",
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libutils",
+        "libhidlbase",
+        "libsync",
+        "libdmabufheap",
+        "android.hardware.graphics.allocator-V2-ndk",
+    ],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+    relative_install_path: "hw",
 }
 
 cc_prebuilt_library_shared {

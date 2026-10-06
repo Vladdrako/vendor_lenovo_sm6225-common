@@ -489,7 +489,15 @@ PRODUCT_PACKAGES += \
     gpu++ \
     libstagefright_foundation_a13 \
     liblocdiagiface \
-    libspl
+    libspl \
+    libadreno_compiler_cl \
+    vendor.egl.qspmhal-V1-ndk \
+    vendor.qti.hardware.hexlp-V2-ndk \
+    vkbadreno_utils \
+    vkbgsl \
+    vkbllvm-glnext \
+    vkbllvm-qgl \
+    mapper.qti
 
 PRODUCT_PACKAGES += \
     libEGL_adreno_libEGL_adreno_symlink32 \
