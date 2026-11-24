@@ -326,11 +326,14 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/libadreno_compiler_cl.so"],
+        },
         android_arm64: {
             srcs: ["proprietary/vendor/lib64/libadreno_compiler_cl.so"],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     shared_libs: ["liblog"],
     check_elf_files: false,
     prefer: true,
@@ -374,72 +377,206 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vkbadreno_utils",
+    name: "notadreno_utils",
     owner: "lenovo",
     strip: {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/notadreno_utils.so"],
+        },
         android_arm64: {
-            srcs: ["proprietary/vendor/lib64/vkbadreno_utils.so"],
+            srcs: ["proprietary/vendor/lib64/notadreno_utils.so"],
         },
     },
-    compile_multilib: "64",
-    shared_libs: ["vkbgsl", "liblog", "libnativewindow"],
+    compile_multilib: "both",
+    shared_libs: ["notgsl", "libc++", "libc", "libm", "libdl"],
     check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
 
 cc_prebuilt_library_shared {
-    name: "vkbgsl",
+    name: "notgsl",
     owner: "lenovo",
     strip: {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/notgsl.so"],
+        },
         android_arm64: {
-            srcs: ["proprietary/vendor/lib64/vkbgsl.so"],
+            srcs: ["proprietary/vendor/lib64/notgsl.so"],
         },
     },
-    compile_multilib: "64",
-    shared_libs: ["libcutils", "liblog", "libz", "libsync", "libdmabufheap"],
+    compile_multilib: "both",
+    shared_libs: ["libcutils", "liblog", "libz", "libsync", "libdmabufheap", "libc++", "libc", "libm", "libdl"],
     check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
 
 cc_prebuilt_library_shared {
-    name: "vkbllvm-glnext",
+    name: "notllvm-glnext",
     owner: "lenovo",
     strip: {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/notllvm-glnext.so"],
+        },
         android_arm64: {
-            srcs: ["proprietary/vendor/lib64/vkbllvm-glnext.so"],
+            srcs: ["proprietary/vendor/lib64/notllvm-glnext.so"],
         },
     },
-    compile_multilib: "64",
-    shared_libs: ["vkbgsl", "liblog"],
+    compile_multilib: "both",
+    shared_libs: ["notgsl", "liblog", "libc++", "libc", "libm", "libdl"],
     check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
 
 cc_prebuilt_library_shared {
-    name: "vkbllvm-qgl",
+    name: "notllvm-qgl",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/notllvm-qgl.so"],
+        },
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/notllvm-qgl.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["notgsl", "liblog", "libc++", "libc", "libm", "libdl"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libkcl",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/libkcl.so"],
+        },
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libkcl.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libc++", "libc", "libm", "libdl"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libkernelmanager",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/libkernelmanager.so"],
+        },
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libkernelmanager.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: ["libc++", "libc", "libm", "libdl"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOpenCL_adreno",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/libOpenCL_adreno.so"],
+        },
+    },
+    compile_multilib: "32",
+    shared_libs: ["libcutils", "libvndksupport", "liblog", "libc++", "libc", "libm", "libdl"],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgame_enhance",
     owner: "lenovo",
     strip: {
         none: true,
     },
     target: {
         android_arm64: {
-            srcs: ["proprietary/vendor/lib64/vkbllvm-qgl.so"],
+            srcs: ["proprietary/vendor/lib64/libgame_enhance.so"],
         },
     },
     compile_multilib: "64",
-    shared_libs: ["vkbgsl", "liblog"],
+    shared_libs: [
+        "liblog",
+        "libsdm-color",
+        "libtinyxml2_1",
+        "libcutils",
+        "libutils",
+        "libdisplayskuutils",
+        "libc++",
+        "libc",
+        "libm",
+        "libdl",
+    ],
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgpu_tonemapper",
+    owner: "lenovo",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libgpu_tonemapper.so"],
+        },
+    },
+    compile_multilib: "64",
+    shared_libs: [
+        "libcutils",
+        "libEGL",
+        "libGLESv2",
+        "libGLESv3",
+        "libgrallocutils",
+        "libhidlbase",
+        "libqdMetaData",
+        "libui",
+        "libutils",
+        "liblog",
+        "libc++",
+        "libc",
+        "libm",
+        "libdl",
+    ],
     check_elf_files: false,
     prefer: true,
     soc_specific: true,
@@ -452,11 +589,14 @@ cc_prebuilt_library_shared {
         none: true,
     },
     target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/hw/mapper.qti.so"],
+        },
         android_arm64: {
             srcs: ["proprietary/vendor/lib64/hw/mapper.qti.so"],
         },
     },
-    compile_multilib: "64",
+    compile_multilib: "both",
     shared_libs: [
         "liblog",
         "libcutils",

@@ -478,10 +478,15 @@ PRODUCT_PACKAGES += \
     libadreno_compiler_cl \
     vendor.egl.qspmhal-V1-ndk \
     vendor.qti.hardware.hexlp-V2-ndk \
-    vkbadreno_utils \
-    vkbgsl \
-    vkbllvm-glnext \
-    vkbllvm-qgl \
+    libgame_enhance \
+    libgpu_tonemapper \
+    libkcl \
+    libkernelmanager \
+    libOpenCL_adreno \
+    notadreno_utils \
+    notgsl \
+    notllvm-glnext \
+    notllvm-qgl \
     mapper.qti
 
 PRODUCT_PACKAGES += \
