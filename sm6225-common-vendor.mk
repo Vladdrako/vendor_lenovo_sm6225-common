@@ -220,6 +220,7 @@ PRODUCT_PACKAGES += \
     libfastcvopt \
     libgpudataproducer \
     libgsl \
+    libthermalclient \
     libidl \
     libllvm-glnext \
     libllvm-qcom \
